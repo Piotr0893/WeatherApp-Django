@@ -24,4 +24,4 @@ def index(request):
     else:  #This line starts the else block that will be executed if the request is not a POST request.
         city =''
         data = {}   
-    return (request, 'index.html',{'city':city, 'data' : data}) # This line uses the render function to render the index.html template and return an HTTP response. 
+    return render (request, 'index.html',{'city':city, 'data' : data}) # This line uses the render function to render the index.html template and return an HTTP response. 
