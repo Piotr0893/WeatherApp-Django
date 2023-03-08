@@ -9,7 +9,7 @@ def index(request):
         city = request.POST['city'] # This line gets the value of the city parameter from the POST data.
         city = city.capitalize() # Convert the first letter of the city to uppercase
         if re.search('[^a-zA-Z]', city):
-            return render(request, 'index.html', {'message': 'Please use English letters only'}) # Gives message if non-english letter was given as input for a city
+            return render(request, 'index.html', {'message': 'Please use English letters only'}) # Gives a message if non-english letter was given as input for a city
         res = urllib.request.urlopen('https://api.openweathermap.org/data/2.5/weather?q='+city+'&appid=a650b0b2d0b34f9f427c884856e0603c').read() 
         #This line uses the urlopen function from the urllib module to make a GET request to the OpenWeatherMap API. 
         # The URL is constructed by concatenating the city parameter, the API endpoint, and the API key.
